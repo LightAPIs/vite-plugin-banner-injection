@@ -1,0 +1,32 @@
+{
+  "name": "vite-plugin-banner-injection",
+  "type": "module",
+  "private": false,
+  "version": "0.1.0",
+  "description": "Insert specified content into the build bundle code",
+  "author": "Light",
+  "license": "MIT",
+  "homepage": "https://github.com/LightAPIs/vite-plugin-banner-injection",
+  "repository": "LightAPIs/vite-plugin-banner-injection",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "keywords": [
+    "vite",
+    "plugin",
+    "banner",
+    "vite-plugin"
+  ],
+  "devDependencies": {
+    "rollup": "^3.29.4",
+    "rollup-plugin-copy": "^3.5.0",
+    "typescript": "^5.2.2",
+    "vite": "^4.4.9",
+    "vite-plugin-dts": "^3.6.0"
+  },
+  "publishConfig": {
+    "directory": "publish"
+  }
+}
