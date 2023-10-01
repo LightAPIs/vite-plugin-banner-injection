@@ -15,25 +15,6 @@ import { defineConfig } from 'vite';
 import BannerInjection from 'vite-plugin-banner-injection';
 
 export default defineConfig({
-  build: {
-    rollupOptions: {
-      output: {
-        banner: 'banner content',
-        footer: 'footer contnet',
-      },
-    },
-  },
-  plugins: [BannerInjection()],
-});
-```
-
-or 
-
-```typescript
-import { defineConfig } from 'vite';
-import BannerInjection from 'vite-plugin-banner-injection';
-
-export default defineConfig({
   plugins: [
     BannerInjection({
       banner: 'banner content',

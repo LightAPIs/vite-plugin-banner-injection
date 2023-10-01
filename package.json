@@ -2,7 +2,7 @@
   "name": "vite-plugin-banner-injection",
   "type": "module",
   "private": false,
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Insert specified content into the build bundle code",
   "author": "Light",
   "license": "MIT",
@@ -20,7 +20,6 @@
     "vite-plugin"
   ],
   "devDependencies": {
-    "rollup": "^3.29.4",
     "rollup-plugin-copy": "^3.5.0",
     "typescript": "^5.2.2",
     "vite": "^4.4.9",

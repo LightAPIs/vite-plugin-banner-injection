@@ -5,9 +5,6 @@ settings:
   excludeLinksFromLockfile: false
 
 devDependencies:
-  rollup:
-    specifier: ^3.29.4
-    version: 3.29.4
   rollup-plugin-copy:
     specifier: ^3.5.0
     version: 3.5.0
@@ -19,7 +16,7 @@ devDependencies:
     version: 4.4.9
   vite-plugin-dts:
     specifier: ^3.6.0
-    version: 3.6.0(rollup@3.29.4)(typescript@5.2.2)(vite@4.4.9)
+    version: 3.6.0(typescript@5.2.2)(vite@4.4.9)
 
 packages:
 
@@ -312,7 +309,7 @@ packages:
       fastq: 1.15.0
     dev: true
 
-  /@rollup/pluginutils@5.0.4(rollup@3.29.4):
+  /@rollup/pluginutils@5.0.4:
     resolution: {integrity: sha512-0KJnIoRI8A+a1dqOYLxH8vBf8bphDmty5QvIm2hqm7oFCFYKCAZWWd2hXgMibaPsNDhI0AtpYfQZJG47pt/k4g==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
@@ -324,7 +321,6 @@ packages:
       '@types/estree': 1.0.2
       estree-walker: 2.0.2
       picomatch: 2.3.1
-      rollup: 3.29.4
     dev: true
 
   /@rushstack/node-core-library@3.61.0:
@@ -997,7 +993,7 @@ packages:
     engines: {node: '>= 0.10'}
     dev: true
 
-  /vite-plugin-dts@3.6.0(rollup@3.29.4)(typescript@5.2.2)(vite@4.4.9):
+  /vite-plugin-dts@3.6.0(typescript@5.2.2)(vite@4.4.9):
     resolution: {integrity: sha512-doxhDRFJCZD2sGjIp4V800nm8Y19GvmwckjG5vYPuiqJ7OBjc9NlW1Vp9Gkyh2aXlUs1jTDRH/lxWfcsPLOQHg==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
@@ -1008,7 +1004,7 @@ packages:
         optional: true
     dependencies:
       '@microsoft/api-extractor': 7.38.0
-      '@rollup/pluginutils': 5.0.4(rollup@3.29.4)
+      '@rollup/pluginutils': 5.0.4
       '@vue/language-core': 1.8.15(typescript@5.2.2)
       debug: 4.3.4
       kolorist: 1.8.0
@@ -1094,3 +1090,5 @@ packages:
     optionalDependencies:
       commander: 9.5.0
     dev: true
+
+publishDirectory: publish
