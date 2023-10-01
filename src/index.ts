@@ -1,56 +1,25 @@
-import type { OutputOptions, SourceMap } from 'rollup';
-
-interface AssetInfo {
-  fileName: string;
-  name?: string;
-  needsCodeReference: boolean;
-  source: string | Uint8Array;
-  type: 'asset';
-}
-
-interface ChunkInfo {
-  code: string;
-  dynamicImports: string[];
-  exports: string[];
-  facadeModuleId: string | null;
-  fileName: string;
-  implicitlyLoadedBefore: string[];
-  imports: string[];
-  importedBindings: { [imported: string]: string[] };
-  isDynamicEntry: boolean;
-  isEntry: boolean;
-  isImplicitEntry: boolean;
-  map: SourceMap | null;
-  modules: {
-    [id: string]: {
-      renderedExports: string[];
-      removedExports: string[];
-      renderedLength: number;
-      originalLength: number;
-      code: string | null;
-    };
-  };
-  moduleIds: string[];
-  name: string;
-  preliminaryFileName: string;
-  referencedFiles: string[];
-  type: 'chunk';
-}
+import type { NormalizedOutputOptions, OutputBundle } from 'rollup';
 
 interface PluginOptions {
   banner?: string;
   footer?: string;
 }
 
-function bannerInjection(pluginOptions: PluginOptions) {
+interface PluginReturnType {
+  name: string;
+  enforce: 'pre' | 'post';
+  generateBundle: (options: NormalizedOutputOptions, bundle: OutputBundle, isWrite: boolean) => void | Promise<void>;
+}
+
+function bannerInjection(pluginOptions?: PluginOptions): PluginReturnType {
   const name = 'banner-injection';
 
   return {
     name,
     enforce: 'post',
-    generateBundle(options: OutputOptions, bundle: { [fileName: string]: AssetInfo | ChunkInfo }) {
-      const banner = pluginOptions.banner || options.banner || '';
-      const footer = pluginOptions.footer || options.footer || '';
+    generateBundle(options, bundle) {
+      const banner = pluginOptions?.banner || options.banner || '';
+      const footer = pluginOptions?.footer || options.footer || '';
 
       for (const module of Object.values(bundle)) {
         if (module.type === 'chunk') {

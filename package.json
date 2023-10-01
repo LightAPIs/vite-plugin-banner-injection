@@ -2,7 +2,7 @@
   "name": "vite-plugin-banner-injection",
   "type": "module",
   "private": false,
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Insert specified content into the build bundle code",
   "author": "Light",
   "license": "MIT",
